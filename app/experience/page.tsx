@@ -7,44 +7,43 @@ import type {
 
 const experienceEntries: IExperienceEntry[] = [
   {
-    id: "senior-backend-engineer",
-    title: "Senior Backend Engineer",
-    company: "Company Name",
+    id: "full-stack-developer",
+    title: "Full Stack Developer & Requirements Analyst Helper",
+    company: "Baleares Group",
     period: "2022 — Present",
     description:
-      "Designing resilient backend services, shaping API contracts, and driving cost-efficient architectures across globally distributed teams.",
+      "Analysing requirements, building scalable and maintainable web applications using React, BeyondJS, Node.js with Typescript, collaborating closely with product designers, and delivering software solutions to a variety of client bases of distinct industries.",
   },
-  {
-    id: "full-stack-developer",
-    title: "Full Stack Developer",
-    company: "Previous Company",
-    period: "2020 — 2022",
-    description:
-      "Delivered cross-functional web initiatives with Next.js, React, and Node.js, collaborating closely with product and design stakeholders.",
-  },
-];
+  ];
 
 const certificates: ICertificate[] = [
   {
-    id: "aws-certified-solutions-architect",
-    name: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    year: "2023",
-    link: "https://aws.amazon.com/certification/",
+    id: "cs50",
+    name: "CS50's Introduction to Computer Science",
+    issuer: "Harvard University",
+    year: "2024",
+    link: "https://certificates.cs50.io/ac058300-240f-4a0b-b236-50501cb1f624.png?size=letter",
   },
   {
-    id: "professional-certificate-ai",
-    name: "Professional Certificate in Artificial Intelligence",
-    issuer: "Coursera",
-    year: "2022",
-    link: "https://www.coursera.org",
+    id: "free-code-camp-algorithms",
+    name: "Free Code Camp Algorithms and Data Structures",
+    issuer: "Free Code Camp",
+    year: "2021",
+    link: "https://www.freecodecamp.org/espanol/certification/bryantdev_/javascript-algorithms-and-data-structures",
+  },
+{
+    id: "free-code-camp-responsive-web-design",
+    name: "Free Code Camp Responsive Web Design",
+    issuer: "Free Code Camp",
+    year: "2021",
+    link: "https://www.freecodecamp.org/espanol/certification/bryantdev_/responsive-web-design",
   },
 ];
 
 export default function ExperiencePage() {
   return (
     <main className="bg-background">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 pt-20 pb-20 sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 pt-5 pb-20 sm:px-6 lg:px-8">
         <ExperienceTimeline entries={experienceEntries} />
         <CertificateList certificates={certificates} />
       </div>
