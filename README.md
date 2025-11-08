@@ -1,30 +1,35 @@
-# Personal portfolio website
+# Bryant's Portfolio
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+This is my personal portfolio website.  
+It presents who I am, what I’ve built, and the work I’ve done — in a simple,
+transparent, and developer-focused way.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/bryants-projects/v0-personal-portfolio-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/b0uuj7FRe5W)
+The design is intentionally minimal.  
+No animations, no noise, no scroll traps.  
+Just clear structure, strong typography, and content that speaks for itself.
 
-## Overview
+---
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Sections
 
-## Deployment
+**00. About Me**  
+A brief introduction: who I am, what I do, and what drives my work.  
+Includes a portrait photo, professional role, and a direct description of my
+background.
 
-Your project is live at:
+**01. Projects**  
+A curated set of my most relevant work.  
+Fetched automatically from my GitHub profile.  
+Only repositories with meaningful activity and stars are listed, up to 10
+maximum. Each project links to its live version (when available).
 
-**[https://vercel.com/bryants-projects/v0-personal-portfolio-website](https://vercel.com/bryants-projects/v0-personal-portfolio-website)**
+**02. Experience**  
+A timeline of professional roles, contributions, and certifications.  
+Each entry includes links to confirmability (organizations, courses,
+publications, etc.).
 
-## Build your app
+---
 
-Continue building your app on:
+## Visual Identity
 
-**[https://v0.app/chat/b0uuj7FRe5W](https://v0.app/chat/b0uuj7FRe5W)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+The website is built around a dark theme with a terminal-inspired aesthetic.

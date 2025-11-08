@@ -1,0 +1,99 @@
+---
+alwaysApply: true
+---
+
+You are an expert in TypeScript, Node.js, Next.js App Router, React, Shadcn UI,
+Radix UI and Tailwind.
+
+Code Style and Structure
+
+-   Write concise, technical TypeScript code with accurate examples.
+-   Use functional and declarative programming patterns; avoid classes.
+-   Prefer iteration and modularization over code duplication.
+-   Use descriptive variable names with auxiliary verbs (e.g., isLoading,
+    hasError).
+-   Structure files: exported component, subcomponents, helpers, static content,
+    types.
+-   **NO MORE THAN ONE COMPONENT PER FILE.** Extract additional UI into separate
+    files; keep files focused and cohesive. Each component must be in its own
+    file.
+-   **Keep components small and focused.** Components should not exceed 80
+    lines. If a component is larger than 80 lines, it's a red flag that
+    indicates at least one subcomponent should be extracted. Break down complex
+    components into smaller, reusable pieces.
+-   **Organize related components in folders.** If multiple files share a common
+    prefix (e.g., `project-switcher-button.tsx`, `project-switcher-empty.tsx`,
+    `project-switcher.tsx`), they should be organized in a folder with that
+    prefix. The main component should be `index.tsx` (or the folder name), and
+    subcomponents should be named after their suffix (e.g.,
+    `project-switcher/button.tsx`, `project-switcher/empty.tsx`,
+    `project-switcher/index.tsx`). This improves maintainability and makes the
+    component structure clearer.
+-   **Nest related folders when parent folder exists.** If a folder like
+    `project/` exists and there's a related folder like `project-switcher/`,
+    nest the related folder inside the parent as `project/switcher/` instead of
+    keeping them as siblings. For example, if you have both `project/` and
+    `project-switcher/` folders, move `project-switcher/` to
+    `project/switcher/`. This creates a clearer hierarchy and groups related
+    functionality together.
+-   **Remove redundant prefixes when nesting.** When a component folder is
+    nested inside a parent folder, remove the parent's prefix from the nested
+    folder name. For example, if you have `pricing/pricing-card/`, rename it to
+    `pricing/card/` since the `pricing-` prefix is redundant when already inside
+    the `pricing/` folder. Similarly, `project/project-switcher/` should be
+    `project/switcher/`.
+
+Naming Conventions
+
+-   Use lowercase with dashes for directories (e.g., components/auth-wizard).
+-   Favor named exports for components.
+
+TypeScript Usage
+
+-   Use TypeScript for all code; prefer interfaces over types.
+-   **Interfaces must be in PascalCase and always start with "I" prefix** (e.g.,
+    `IProject`, `IUserData`, `INavigationProps`).
+-   Types should be in PascalCase when used for object shapes or unions.
+-   Avoid enums; use maps instead.
+-   Use functional components with TypeScript interfaces.
+
+Syntax and Formatting
+
+-   Use the "function" keyword for pure functions.
+-   Avoid unnecessary curly braces in conditionals; use concise syntax for
+    simple statements.
+-   Use declarative JSX.
+-   Do not use ternary conditions directly inside JSX; compute values with small
+    helper variables/functions before the return.
+-   Do not use Array.map directly inside JSX; extract a small presentational
+    subcomponent and iterate outside the JSX tree, or render a list component
+    that receives prepared data.
+
+UI and Styling
+
+-   Use Shadcn UI, Radix, and Tailwind for components and styling.
+-   Implement responsive design with Tailwind CSS; use a mobile-first approach.
+
+Performance Optimization
+
+-   **Prioritize Server Components over Client Components.** Use React Server
+    Components (RSC) by default. Only use 'use client' when absolutely necessary
+    (interactivity, browser APIs, event handlers).
+-   Minimize 'use client', 'useEffect', and 'setState'; favor React Server
+    Components (RSC).
+-   Wrap client components in Suspense with fallback.
+-   Use dynamic loading for non-critical components.
+-   Optimize images: use WebP format, include size data, implement lazy loading.
+
+Key Conventions
+
+-   Use 'nuqs' for URL search parameter state management.
+-   Optimize Web Vitals (LCP, CLS, FID).
+-   Limit 'use client':
+    -   Favor server components and Next.js SSR.
+    -   Use only for Web API access in small components.
+    -   Avoid for data fetching or state management.
+-   Keep components small and focused; extract subcomponents and utilities for
+    readability and maintainability.
+
+Follow Next.js docs for Data Fetching, Rendering, and Routing.
