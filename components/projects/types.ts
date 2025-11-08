@@ -6,4 +6,5 @@ export interface IGitHubRepository {
   homepage: string | null;
   stargazers_count: number;
   language: string | null;
+  created_at: string;
 }
