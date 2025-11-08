@@ -40,7 +40,7 @@ export function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 bg-background">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-0 py-5">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-8 py-5">
             <div className="flex items-center gap-10">{navigationLinkItems}</div>
       </div>
     </nav>
