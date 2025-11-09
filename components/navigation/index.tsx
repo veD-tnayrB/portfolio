@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -16,8 +17,45 @@ const navigationLinks: INavigationLink[] = [
   { href: "/experience", label: "02. Experience" },
 ];
 
+const quickAccessMap: Record<string, string> = {
+  "0": navigationLinks[0]?.href ?? "/",
+  "1": navigationLinks[1]?.href ?? "/",
+  "2": navigationLinks[2]?.href ?? "/",
+};
+
 export function Navigation() {
+  const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    function handleKeydown(event: KeyboardEvent) {
+      if (event.defaultPrevented) {
+        return;
+      }
+
+      const target = event.target as HTMLElement | null;
+      if (
+        target &&
+        (target.isContentEditable ||
+          target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.tagName === "SELECT")
+      ) {
+        return;
+      }
+
+      const destination = quickAccessMap[event.key];
+      if (!destination || destination === pathname) {
+        return;
+      }
+
+      event.preventDefault();
+      router.push(destination);
+    }
+
+    window.addEventListener("keydown", handleKeydown);
+    return () => window.removeEventListener("keydown", handleKeydown);
+  }, [pathname, router]);
 
   const navigationLinkItems = navigationLinks.map((link) => {
     const isActive = pathname === link.href;
@@ -41,7 +79,7 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-background">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-8 py-5">
-            <div className="flex items-center gap-10">{navigationLinkItems}</div>
+        <div className="flex items-center gap-10">{navigationLinkItems}</div>
       </div>
     </nav>
   );
