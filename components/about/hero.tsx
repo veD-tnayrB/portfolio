@@ -21,6 +21,7 @@ export function AboutHero() {
     <a
       key={link.href}
       href={link.href}
+      target="_blank"
       className="text-muted-foreground hover:text-foreground focus-visible:text-foreground focus-visible:ring-primary text-sm font-medium transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
     >
       {link.label}
