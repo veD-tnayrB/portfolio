@@ -7,8 +7,8 @@ interface ISocialLink {
 }
 
 const socialLinks: ISocialLink[] = [
-  { label: "GitHub →", href: "https://github.com/yourusername" },
-  { label: "Email →", href: "mailto:you@example.com" },
+  { label: "GitHub →", href: "https://github.com/veD-tnayrB" },
+  { label: "Email →", href: "mailto:brayanmc.contacto@gmail.com" },
 ];
 
 const paragraphs: string[] = [
