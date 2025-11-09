@@ -1,6 +1,3 @@
-import portrait from "@/public/images/portrait.png";
-import Image from "next/image";
-
 interface ISocialLink {
   label: string;
   href: string;
@@ -38,30 +35,17 @@ export function AboutHero() {
   ));
 
   return (
-    <section className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-6xl flex-col gap-12 px-4 pt-14 pb-12 sm:flex-row sm:items-center sm:justify-between sm:gap-16 sm:px-6 lg:px-8">
-      <div className="border-border/60 bg-background/60 mx-auto w-full max-w-sm overflow-hidden rounded-3xl border shadow-lg shadow-black/20 sm:order-last">
-        <Image
-          src={portrait}
-          alt="Portrait photograph"
-          priority
-          sizes="(max-width: 640px) 320px, (max-width: 1024px) 400px, 480px"
-          className="h-full w-full object-cover"
-        />
+    <section className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-4xl flex-col justify-center gap-6 px-4 py-12 sm:px-6 lg:px-8">
+      <div className="space-y-3">
+        <p className="text-primary text-xs font-semibold tracking-[0.35em] uppercase">
+          Full Stack Developer & Systems Architect
+        </p>
+        <h1 className="text-foreground text-4xl font-normal sm:text-5xl lg:text-6xl">
+          Bryant Caballero
+        </h1>
       </div>
-      <div className="flex w-full max-w-2xl flex-col gap-4">
-        <div className="space-y-3">
-          <p className="text-primary text-xs font-semibold tracking-[0.35em] uppercase">
-            Full Stack Developer & Systems Architect
-          </p>
-          <h1 className="text-foreground text-4xl sm:text-5xl lg:text-6xl font-normal">
-            Bryant Caballero
-          </h1>
-        </div>
-        <div className="space-y-4">{paragraphItems}</div>
-        <div className="flex flex-wrap items-center gap-5">
-          {socialLinkItems}
-        </div>
-      </div>
+      <div className="space-y-4">{paragraphItems}</div>
+      <div className="flex flex-wrap items-center gap-5">{socialLinkItems}</div>
     </section>
   );
 }
