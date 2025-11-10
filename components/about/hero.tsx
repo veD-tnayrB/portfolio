@@ -6,11 +6,12 @@ interface ISocialLink {
 const socialLinks: ISocialLink[] = [
   { label: "GitHub →", href: "https://github.com/veD-tnayrB" },
   { label: "Email →", href: "mailto:brayanmc.contacto@gmail.com" },
+  { label: "CV →", href: "/Bryant_Caballero.pdf" },
 ];
 
 const paragraphs: string[] = [
   "My focus is transforming ambiguous problems into predictable, maintainable software systems. I specialize in the hands-on implementation of robust standards, crafting essential developer tooling, and engineering processes that elevate team output.",
-  "I champion \"Boring Code\": clear, predictable, and strictly standardized architectures that eliminate daily technical friction. This practice shifts the engineering effort away from code firefighting and toward the critical work of product innovation and quality design.",
+  'I champion "Boring Code": clear, predictable, and strictly standardized architectures that eliminate daily technical friction. This practice shifts the engineering effort away from code firefighting and toward the critical work of product innovation and quality design.',
 ];
 
 export function AboutHero() {
