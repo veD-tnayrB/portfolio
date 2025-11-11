@@ -49,6 +49,41 @@ export function Navigation() {
         return;
       }
 
+      // Handle arrow key navigation
+      if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+        const currentIndex = navigationLinks.findIndex(
+          (link) => link.href === pathname,
+        );
+
+        if (currentIndex === -1) {
+          return;
+        }
+
+        let nextIndex: number | null = null;
+        if (event.key === "ArrowRight") {
+          // Only move right if not at the last element
+          if (currentIndex < navigationLinks.length - 1) {
+            nextIndex = currentIndex + 1;
+          }
+        } else {
+          // Only move left if not at the first element
+          if (currentIndex > 0) {
+            nextIndex = currentIndex - 1;
+          }
+        }
+
+        // Only navigate if there's a valid next index
+        if (nextIndex !== null) {
+          const destination = navigationLinks[nextIndex]?.href;
+          if (destination) {
+            event.preventDefault();
+            router.push(destination);
+          }
+        }
+        return;
+      }
+
+      // Handle numeric key navigation
       const destination = quickAccessMap[event.key];
       if (!destination || destination === pathname) {
         return;
@@ -72,9 +107,9 @@ export function Navigation() {
             key={link.href}
             href={link.href}
             className={cn(
-              "text-sm leading-none font-medium tracking-[0.08em] transition-colors duration-200",
+              "px-2 py-1 text-sm leading-none font-medium tracking-[0.08em] transition-colors duration-200",
               "text-muted-foreground hover:text-foreground focus-visible:text-foreground focus-visible:outline-none",
-              isActive && "bg-foreground text-background px-2 py-1",
+              isActive && "bg-foreground text-background",
             )}
             aria-current={isActive ? "page" : undefined}
           >
