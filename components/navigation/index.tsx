@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -72,9 +72,9 @@ export function Navigation() {
             key={link.href}
             href={link.href}
             className={cn(
-              "text-sm font-medium tracking-[0.08em] leading-none transition-colors duration-200",
+              "text-sm leading-none font-medium tracking-[0.08em] transition-colors duration-200",
               "text-muted-foreground hover:text-foreground focus-visible:text-foreground focus-visible:outline-none",
-              isActive && " bg-foreground px-2 py-1 text-background",
+              isActive && "bg-foreground text-background px-2 py-1",
             )}
             aria-current={isActive ? "page" : undefined}
           >
@@ -86,12 +86,14 @@ export function Navigation() {
   );
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur">
+    <nav className="border-border/60 bg-background/95 sticky top-0 z-50 border-b backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <button
           type="button"
-          className="flex h-9 w-9 items-center justify-center rounded-md border border-border/40 text-muted-foreground transition-colors duration-200 hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none md:hidden"
-          aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          className="border-border/40 text-muted-foreground hover:text-foreground focus-visible:ring-primary flex h-9 w-9 items-center justify-center rounded-md border transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none md:hidden"
+          aria-label={
+            isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           onClick={() => setIsMobileMenuOpen((previous) => !previous)}
         >
           <span className="sr-only">
@@ -119,16 +121,13 @@ export function Navigation() {
           </div>
         </button>
 
-        <div className="hidden items-center gap-10 md:flex">{navigationLinkItems}</div>
+        <div className="hidden items-center gap-10 md:flex">
+          {navigationLinkItems}
+        </div>
       </div>
 
-      <div
-        className={cn(
-          "md:hidden",
-          isMobileMenuOpen ? "block" : "hidden",
-        )}
-      >
-        <div className="border-b border-border/60 bg-background/95 px-4 pb-4 pt-2 sm:px-6">
+      <div className={cn("md:hidden", isMobileMenuOpen ? "block" : "hidden")}>
+        <div className="border-border/60 bg-background/95 border-b px-4 pt-2 pb-4 sm:px-6">
           <div className="flex flex-col gap-2">{navigationLinkItems}</div>
         </div>
       </div>
