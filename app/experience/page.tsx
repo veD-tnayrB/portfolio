@@ -23,8 +23,9 @@ const experienceEntries: IExperienceEntry[] = [
       "Full-stack development and requirements analysis for clients across multiple industries, building scalable web applications with React, Node.js, and TypeScript in close collaboration with product designers.",
     highlights: [
       "Core contributor to JAD, the company's internal platform and framework, taking part in central product and architecture decisions from its foundations — today it powers 6+ client products in production and sets the team's reference architecture.",
-      "Played a central role in migrating backend services from GCP virtual machines to Cloud Run and Cloud SQL — isolating environments, automating deployments, and reducing operational and maintenance costs.",
-      "Migrated every frontend environment from Apache-based virtual machines to Firebase Hosting, standardizing the infrastructure and simplifying deployments.",
+      "Worked hand-in-hand with clients to migrate their legacy systems onto JAD, extending the lifespan of those systems and bringing them back to a maintainable, evolvable state.",
+      "Helped drive AI adoption across the engineering team: defined the rules AI-generated code must follow and designed and documented the quality processes and standards that keep agentic workflows predictable.",
+      "Played a central role in migrating backend services from GCP virtual machines to Cloud Run and Cloud SQL, and every frontend from Apache-based VMs to Firebase Hosting — isolating environments, automating deployments, and reducing operational costs.",
       "Standardized the team's delivery process, channeling proposals from engineers into a predictable, reliable integration pipeline.",
       "Partnered directly with the CEO and CTO to define technical guidelines, architectures, and solutions for client projects.",
     ],
