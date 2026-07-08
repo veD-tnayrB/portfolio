@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "Bryant Caballero is a Full Stack Developer specialized in React, Next.js, Node.js, and TypeScript, with experience in cloud migrations (Google Cloud, Firebase) and building internal platforms.";
+  "Bryant Caballero is a Full Stack Developer specialized in React, Next.js, Node.js, and TypeScript — building internal platforms, modernizing legacy systems, leading cloud migrations (Google Cloud, Firebase), and defining the standards that keep AI-assisted engineering predictable.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,6 +33,8 @@ export const metadata: Metadata = {
     "TypeScript",
     "Google Cloud",
     "Software Engineer",
+    "Legacy Modernization",
+    "AI-Assisted Engineering",
   ],
   authors: [{ name: "Bryant Caballero", url: SITE_URL }],
   openGraph: {

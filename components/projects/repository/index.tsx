@@ -20,9 +20,9 @@ export function RepositoryList({ repositories }: IRepositoryListProps) {
           Open Source Highlights
         </h1>
         <p className="text-muted-foreground max-w-2xl text-sm sm:text-base">
-          A curated selection of GitHub repositories ranked by community
-          interest. These projects showcase my approach to developer experience,
-          performance, and maintainability.
+          A hand-picked selection of my open source work — platforms, starters,
+          and product experiments that showcase my approach to developer
+          experience, performance, and maintainability.
         </p>
       </header>
       <div className="grid gap-5">{repositoryItems}</div>

@@ -20,8 +20,8 @@ export function CertificateList({ certificates }: ICertificateListProps) {
           Continuous Learning
         </h2>
         <p className="text-muted-foreground max-w-xl text-sm sm:text-base">
-          Certifications and structured programs that reinforce my focus on
-          cloud infrastructure and applied machine learning.
+          Structured programs that ground my day-to-day work in computer
+          science fundamentals, algorithms, and web development.
         </p>
       </header>
       <div className="grid gap-4 md:grid-cols-2">{certificateItems}</div>

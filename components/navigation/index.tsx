@@ -132,7 +132,7 @@ export function Navigation() {
           onClick={() => setIsMobileMenuOpen((previous) => !previous)}
         >
           <span className="sr-only">
-            {isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            {isMobileMenuOpen ? "Close menu" : "Open menu"}
           </span>
           <div className="flex flex-col items-center justify-center gap-1">
             <span

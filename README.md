@@ -22,9 +22,8 @@ background.
 
 **01. Projects**  
 A curated set of my most relevant work.  
-Fetched automatically from my GitHub profile.  
-Only repositories with meaningful activity and stars are listed, up to 10
-maximum. Each project links to its live version (when available).
+Fetched automatically from my GitHub profile, showing a hand-picked list of
+featured repositories. Each project links to its live version (when available).
 
 **02. Experience**  
 A timeline of professional roles, contributions, and certifications.  
