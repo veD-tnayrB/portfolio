@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
+
 import { RepositoryList } from "@/components/projects/repository";
 import type { IGitHubRepository } from "@/components/projects/types";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Open source projects by Bryant Caballero — SaaS starters, admin platforms, and web applications built with React, Next.js, TypeScript, and Node.js.",
+};
 
 async function getGitHubRepositories(
   username: string,
@@ -49,7 +57,7 @@ async function getGitHubRepositories(
 }
 
 export default async function ProjectsPage() {
-  const repositories = await getGitHubRepositories("veD-tnayrB");
+  const repositories = await getGitHubRepositories("eynort");
   const hasRepositories = repositories.length > 0;
 
   return (
@@ -60,11 +68,19 @@ export default async function ProjectsPage() {
         ) : (
           <section className="border-border/50 bg-card/30 space-y-4 rounded-3xl border p-8 text-center shadow-lg shadow-black/10">
             <h1 className="text-foreground text-2xl font-semibold sm:text-3xl">
-              Repositories unavailable
+              Projects are temporarily unavailable
             </h1>
             <p className="text-muted-foreground text-sm sm:text-base">
-              Update the GitHub username in the source code to point to an
-              account with public repositories.
+              You can browse all of my work directly on{" "}
+              <a
+                href="https://github.com/eynort"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline underline-offset-4"
+              >
+                GitHub
+              </a>
+              .
             </p>
           </section>
         )}

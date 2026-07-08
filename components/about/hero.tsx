@@ -1,12 +1,22 @@
 interface ISocialLink {
   label: string;
   href: string;
+  openInNewTab: boolean;
 }
 
 const socialLinks: ISocialLink[] = [
-  { label: "GitHub →", href: "https://github.com/veD-tnayrB" },
-  { label: "Email →", href: "mailto:brayanmc.contacto@gmail.com" },
-  { label: "CV →", href: "/Bryant_Caballero.pdf" },
+  { label: "GitHub →", href: "https://github.com/eynort", openInNewTab: true },
+  {
+    label: "LinkedIn →",
+    href: "https://www.linkedin.com/in/bryantdev/",
+    openInNewTab: true,
+  },
+  {
+    label: "Email →",
+    href: "mailto:brayanmc.contacto@gmail.com",
+    openInNewTab: false,
+  },
+  { label: "CV →", href: "/Bryant_Caballero.pdf", openInNewTab: true },
 ];
 
 const paragraphs: string[] = [
@@ -19,7 +29,8 @@ export function AboutHero() {
     <a
       key={link.href}
       href={link.href}
-      target="_blank"
+      target={link.openInNewTab ? "_blank" : undefined}
+      rel={link.openInNewTab ? "noopener noreferrer" : undefined}
       className="text-muted-foreground hover:text-foreground focus-visible:text-foreground focus-visible:ring-primary text-sm font-medium transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
     >
       {link.label}
@@ -39,7 +50,7 @@ export function AboutHero() {
     <section className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-4xl flex-col justify-center gap-6 px-4 py-12 sm:px-6 lg:px-8">
       <div className="space-y-3">
         <p className="text-primary text-xs font-semibold tracking-[0.35em] uppercase">
-          Full Stack Developer & Systems Architect
+          Full Stack Developer · React · Next.js · Node.js
         </p>
         <h1 className="text-foreground text-4xl font-normal sm:text-5xl lg:text-6xl">
           Bryant Caballero

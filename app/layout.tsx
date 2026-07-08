@@ -5,6 +5,7 @@ import { Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
 import { Navigation } from "@/components/navigation";
+import { SITE_URL } from "@/lib/site";
 
 import "./globals.css";
 
@@ -13,10 +14,41 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
 });
 
+const siteDescription =
+  "Bryant Caballero is a Full Stack Developer specialized in React, Next.js, Node.js, and TypeScript, with experience in cloud migrations (Google Cloud, Firebase) and building internal platforms.";
+
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Personal portfolio website",
-  generator: "v0.app",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Bryant Caballero — Full Stack Developer",
+    template: "%s — Bryant Caballero",
+  },
+  description: siteDescription,
+  keywords: [
+    "Bryant Caballero",
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "Google Cloud",
+    "Software Engineer",
+  ],
+  authors: [{ name: "Bryant Caballero", url: SITE_URL }],
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: "Bryant Caballero — Full Stack Developer",
+    description: siteDescription,
+    siteName: "Bryant Caballero",
+    images: [{ url: "/images/portrait.png", alt: "Bryant Caballero" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bryant Caballero — Full Stack Developer",
+    description: siteDescription,
+    images: ["/images/portrait.png"],
+  },
   icons: {
     icon: [
       {

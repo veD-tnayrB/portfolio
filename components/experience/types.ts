@@ -4,6 +4,7 @@ export interface IExperienceEntry {
   company: string;
   period: string;
   description: string;
+  highlights: string[];
 }
 
 export interface ICertificate {

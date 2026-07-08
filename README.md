@@ -1,5 +1,8 @@
 # Bryant's Portfolio
 
+**Live site:** https://v0-personal-portfolio-website-pink-ten.vercel.app  
+**GitHub:** https://github.com/eynort
+
 This is my personal portfolio website.  
 It presents who I am, what I’ve built, and the work I’ve done — in a simple,
 transparent, and developer-focused way.

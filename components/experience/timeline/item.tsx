@@ -7,6 +7,15 @@ interface IExperienceTimelineItemProps {
 export function ExperienceTimelineItem({
   entry,
 }: IExperienceTimelineItemProps) {
+  const highlightItems = entry.highlights.map((highlight) => (
+    <li
+      key={highlight}
+      className="text-muted-foreground text-sm leading-relaxed sm:text-base"
+    >
+      {highlight}
+    </li>
+  ));
+
   return (
     <article className="border-border/50 bg-card/40 hover:border-border rounded-3xl border p-6 shadow-lg shadow-black/10 transition-colors duration-200 sm:p-8">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
@@ -25,6 +34,11 @@ export function ExperienceTimelineItem({
       <p className="text-muted-foreground mt-4 text-sm leading-relaxed sm:text-base">
         {entry.description}
       </p>
+      {highlightItems.length > 0 ? (
+        <ul className="mt-4 list-disc space-y-2 pl-5 marker:text-primary">
+          {highlightItems}
+        </ul>
+      ) : null}
     </article>
   );
 }

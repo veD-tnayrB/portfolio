@@ -20,8 +20,8 @@ export function ExperienceTimeline({ entries }: IExperienceTimelineProps) {
           Work History
         </h1>
         <p className="text-muted-foreground max-w-2xl text-sm sm:text-base">
-          Highlights from previous roles where I led backend initiatives, scaled
-          systems, and collaborated closely with cross-functional teams.
+          Full-stack product work, cloud migrations, and platform engineering —
+          in close collaboration with technical and business leadership.
         </p>
       </header>
       <div className="grid gap-6">{timelineItems}</div>
