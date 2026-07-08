@@ -1,4 +1,4 @@
-export interface IGitHubRepository {
+export interface IGitHubRepositoryResponse {
   id: number;
   name: string;
   description: string | null;
@@ -7,4 +7,8 @@ export interface IGitHubRepository {
   stargazers_count: number;
   language: string | null;
   created_at: string;
+}
+
+export interface IGitHubRepository extends IGitHubRepositoryResponse {
+  languages: string[];
 }

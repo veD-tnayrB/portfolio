@@ -1,13 +1,60 @@
 import type { Metadata } from "next";
 
 import { RepositoryList } from "@/components/projects/repository";
-import type { IGitHubRepository } from "@/components/projects/types";
+import type {
+  IGitHubRepository,
+  IGitHubRepositoryResponse,
+} from "@/components/projects/types";
 
 export const metadata: Metadata = {
   title: "Projects",
   description:
     "Open source projects by Bryant Caballero — SaaS starters, admin platforms, and web applications built with React, Next.js, TypeScript, and Node.js.",
 };
+
+const MINIMUM_LANGUAGE_SHARE = 0.05;
+const MAXIMUM_LANGUAGE_BADGES = 4;
+
+async function getRepositoryLanguages(
+  username: string,
+  repositoryName: string,
+): Promise<string[]> {
+  try {
+    const response = await fetch(
+      `https://api.github.com/repos/${username}/${repositoryName}/languages`,
+      {
+        headers: { Accept: "application/vnd.github.v3+json" },
+        next: { revalidate: 3600 },
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch repository languages");
+    }
+
+    const languageBytes: Record<string, number> = await response.json();
+    const totalBytes = Object.values(languageBytes).reduce(
+      (total, bytes) => total + bytes,
+      0,
+    );
+
+    if (totalBytes === 0) {
+      return [];
+    }
+
+    return Object.entries(languageBytes)
+      .filter(([, bytes]) => bytes / totalBytes >= MINIMUM_LANGUAGE_SHARE)
+      .sort(([, firstBytes], [, secondBytes]) => secondBytes - firstBytes)
+      .slice(0, MAXIMUM_LANGUAGE_BADGES)
+      .map(([name]) => name);
+  } catch (error) {
+    console.error(
+      `Error fetching languages for repository ${repositoryName}`,
+      error,
+    );
+    return [];
+  }
+}
 
 async function getGitHubRepositories(
   username: string,
@@ -25,7 +72,7 @@ async function getGitHubRepositories(
       throw new Error("Failed to fetch repositories");
     }
 
-    const repositories: IGitHubRepository[] = await response.json();
+    const repositories: IGitHubRepositoryResponse[] = await response.json();
 
     const featuredRepositoryIds = [
       "saasstarter",
@@ -38,6 +85,11 @@ async function getGitHubRepositories(
     const toKey = (value: string) =>
       value.toLowerCase().replace(/[^a-z0-9]/g, "");
 
+    // GitHub reports no languages at all for some forks.
+    const languageFallbacks: Record<string, string[]> = {
+      saasstarter: ["TypeScript"],
+    };
+
     const featuredRepositories = repositories
       .filter((repository) => {
         const repositoryKey = toKey(repository.name);
@@ -49,7 +101,22 @@ async function getGitHubRepositories(
         return firstIndex - secondIndex;
       });
 
-    return featuredRepositories;
+    return Promise.all(
+      featuredRepositories.map(async (repository) => {
+        const languages = await getRepositoryLanguages(
+          username,
+          repository.name,
+        );
+        const fallbackLanguages =
+          languageFallbacks[toKey(repository.name)] ??
+          (repository.language ? [repository.language] : []);
+
+        return {
+          ...repository,
+          languages: languages.length > 0 ? languages : fallbackLanguages,
+        };
+      }),
+    );
   } catch (error) {
     console.error("Error fetching GitHub repositories", error);
     return [];
