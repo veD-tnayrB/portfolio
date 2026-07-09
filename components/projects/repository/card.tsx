@@ -2,6 +2,8 @@ import { IGitHubRepository } from "../types";
 
 interface IRepositoryCardProps {
   repository: IGitHubRepository;
+  viewProjectLabel: string;
+  noDescriptionLabel: string;
 }
 
 // Official GitHub linguist colors for the languages featured repos use.
@@ -14,7 +16,11 @@ const languageColors: Record<string, string> = {
   Go: "#00ADD8",
 };
 
-export function RepositoryCard({ repository }: IRepositoryCardProps) {
+export function RepositoryCard({
+  repository,
+  viewProjectLabel,
+  noDescriptionLabel,
+}: IRepositoryCardProps) {
   const targetLink = repository.homepage || repository.html_url;
 
   const languageBadges = repository.languages.map((language) => (
@@ -68,10 +74,10 @@ export function RepositoryCard({ repository }: IRepositoryCardProps) {
         </div>
       </header>
       <p className="text-muted-foreground text-sm leading-relaxed sm:text-base">
-        {repository.description ?? "Project description coming soon."}
+        {repository.description ?? noDescriptionLabel}
       </p>
       <span className="text-muted-foreground group-hover:text-foreground text-sm font-semibold transition-colors duration-200">
-        View project →
+        {viewProjectLabel}
       </span>
     </a>
   );

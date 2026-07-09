@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import type { IDictionary } from "@/lib/i18n";
+
 interface ISocialLink {
   label: string;
   href: string;
@@ -15,11 +17,6 @@ const socialLinks: ISocialLink[] = [
   },
 ];
 
-const paragraphs: string[] = [
-  "I build full stack products with React, Next.js, and Node.js, turning ambiguous problems into predictable, maintainable systems — from internal platforms powering client products in production to legacy systems brought back to an evolvable state.",
-  'I champion boring processes and "Boring Code": clear, strictly standardized architectures and pipelines that eliminate daily technical friction. My job is to make sure every good idea — whether written by a human or by an agent — gets channeled, standardized, and shipped through an integration chain you can rely on.',
-];
-
 const skills: string[] = [
   "React",
   "Next.js",
@@ -33,7 +30,11 @@ const skills: string[] = [
   "CI/CD",
 ];
 
-export function AboutHero() {
+interface IAboutHeroProps {
+  content: IDictionary["hero"];
+}
+
+export function AboutHero({ content }: IAboutHeroProps) {
   const socialLinkItems = socialLinks.map((link) => (
     <a
       key={link.href}
@@ -46,7 +47,7 @@ export function AboutHero() {
     </a>
   ));
 
-  const paragraphItems = paragraphs.map((paragraph) => (
+  const paragraphItems = content.paragraphs.map((paragraph) => (
     <p
       key={paragraph}
       className="text-muted-foreground text-base leading-relaxed sm:text-lg"
@@ -79,7 +80,7 @@ export function AboutHero() {
               aria-hidden="true"
               className="inline-block h-2 w-2 rounded-full bg-emerald-500"
             />
-            Open to remote roles · Venezuela (GMT-4) · English C1
+            {content.availability}
           </p>
         </div>
         <Image
@@ -95,12 +96,12 @@ export function AboutHero() {
       <div className="flex flex-wrap gap-2">{skillItems}</div>
       <div className="flex flex-wrap items-center gap-4">
         <a
-          href="/Bryant_Caballero.pdf"
+          href={content.cvHref}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-foreground text-background hover:bg-foreground/90 focus-visible:ring-primary inline-flex h-10 items-center rounded-md px-5 text-sm font-semibold transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
         >
-          Download CV
+          {content.downloadCv}
         </a>
         <a
           href="https://www.linkedin.com/in/bryantdev/"

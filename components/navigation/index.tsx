@@ -5,28 +5,39 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
+import type { IDictionary, Locale } from "@/lib/i18n";
 
 interface INavigationLink {
   href: string;
   label: string;
 }
 
-const navigationLinks: INavigationLink[] = [
-  { href: "/", label: "00. About" },
-  { href: "/projects", label: "01. Projects" },
-  { href: "/experience", label: "02. Experience" },
-];
+interface INavigationProps {
+  lang: Locale;
+  labels: IDictionary["nav"];
+}
 
-const quickAccessMap: Record<string, string> = {
-  "0": navigationLinks[0]?.href ?? "/",
-  "1": navigationLinks[1]?.href ?? "/",
-  "2": navigationLinks[2]?.href ?? "/",
-};
-
-export function Navigation() {
+export function Navigation({ lang, labels }: INavigationProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navigationLinks: INavigationLink[] = useMemo(
+    () => [
+      { href: `/${lang}`, label: labels.about },
+      { href: `/${lang}/projects`, label: labels.projects },
+      { href: `/${lang}/experience`, label: labels.experience },
+    ],
+    [lang, labels],
+  );
+
+  const otherLang: Locale = lang === "en" ? "es" : "en";
+
+  function switchLanguage() {
+    document.cookie = `NEXT_LOCALE=${otherLang}; path=/; max-age=31536000; samesite=lax`;
+    const nextPath = pathname.replace(`/${lang}`, `/${otherLang}`);
+    router.push(nextPath);
+  }
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -84,7 +95,8 @@ export function Navigation() {
       }
 
       // Handle numeric key navigation
-      const destination = quickAccessMap[event.key];
+      const quickAccessIndex = Number.parseInt(event.key, 10);
+      const destination = navigationLinks[quickAccessIndex]?.href;
       if (!destination || destination === pathname) {
         return;
       }
@@ -95,29 +107,38 @@ export function Navigation() {
 
     window.addEventListener("keydown", handleKeydown);
     return () => window.removeEventListener("keydown", handleKeydown);
-  }, [pathname, router]);
+  }, [pathname, router, navigationLinks]);
 
-  const navigationLinkItems = useMemo(
-    () =>
-      navigationLinks.map((link) => {
-        const isActive = pathname === link.href;
+  const navigationLinkItems = navigationLinks.map((link) => {
+    const isActive = pathname === link.href;
 
-        return (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={cn(
-              "px-2 py-1 text-sm leading-none font-medium tracking-[0.08em] transition-colors duration-200",
-              "text-muted-foreground hover:text-foreground focus-visible:text-foreground focus-visible:outline-none",
-              isActive && "bg-foreground text-background",
-            )}
-            aria-current={isActive ? "page" : undefined}
-          >
-            {link.label}
-          </Link>
-        );
-      }),
-    [pathname],
+    return (
+      <Link
+        key={link.href}
+        href={link.href}
+        className={cn(
+          "px-2 py-1 text-sm leading-none font-medium tracking-[0.08em] transition-colors duration-200",
+          "text-muted-foreground hover:text-foreground focus-visible:text-foreground focus-visible:outline-none",
+          isActive && "bg-foreground text-background",
+        )}
+        aria-current={isActive ? "page" : undefined}
+      >
+        {link.label}
+      </Link>
+    );
+  });
+
+  const languageSwitch = (
+    <button
+      type="button"
+      onClick={switchLanguage}
+      aria-label={labels.switchLanguage}
+      className="border-border/40 text-muted-foreground hover:text-foreground focus-visible:ring-primary flex h-8 items-center gap-1 rounded-md border px-2.5 text-xs font-semibold tracking-[0.08em] transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+    >
+      <span className={cn(lang === "en" && "text-foreground")}>EN</span>
+      <span aria-hidden="true">/</span>
+      <span className={cn(lang === "es" && "text-foreground")}>ES</span>
+    </button>
   );
 
   return (
@@ -126,14 +147,9 @@ export function Navigation() {
         <button
           type="button"
           className="border-border/40 text-muted-foreground hover:text-foreground focus-visible:ring-primary flex h-9 w-9 items-center justify-center rounded-md border transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none md:hidden"
-          aria-label={
-            isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
-          }
+          aria-label={isMobileMenuOpen ? labels.closeMenu : labels.openMenu}
           onClick={() => setIsMobileMenuOpen((previous) => !previous)}
         >
-          <span className="sr-only">
-            {isMobileMenuOpen ? "Close menu" : "Open menu"}
-          </span>
           <div className="flex flex-col items-center justify-center gap-1">
             <span
               className={cn(
@@ -159,6 +175,8 @@ export function Navigation() {
         <div className="hidden items-center gap-10 md:flex">
           {navigationLinkItems}
         </div>
+
+        {languageSwitch}
       </div>
 
       <div className={cn("md:hidden", isMobileMenuOpen ? "block" : "hidden")}>

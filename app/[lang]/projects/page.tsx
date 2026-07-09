@@ -5,12 +5,23 @@ import type {
   IGitHubRepository,
   IGitHubRepositoryResponse,
 } from "@/components/projects/types";
+import { getDictionary, isLocale } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "Projects",
-  description:
-    "Open source projects by Bryant Caballero — SaaS starters, admin platforms, and web applications built with React, Next.js, TypeScript, and Node.js.",
-};
+interface IProjectsPageProps {
+  params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: IProjectsPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const dictionary = getDictionary(isLocale(lang) ? lang : "en");
+
+  return {
+    title: dictionary.pageTitles.projects,
+    description: dictionary.pageDescriptions.projects,
+  };
+}
 
 const MINIMUM_LANGUAGE_SHARE = 0.05;
 const MAXIMUM_LANGUAGE_BADGES = 4;
@@ -138,7 +149,9 @@ async function getGitHubRepositories(
   }
 }
 
-export default async function ProjectsPage() {
+export default async function ProjectsPage({ params }: IProjectsPageProps) {
+  const { lang } = await params;
+  const dictionary = getDictionary(isLocale(lang) ? lang : "en");
   const repositories = await getGitHubRepositories("eynort");
   const hasRepositories = repositories.length > 0;
 
@@ -146,21 +159,24 @@ export default async function ProjectsPage() {
     <main className="bg-background">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pt-5 pb-20 sm:px-6 lg:px-8">
         {hasRepositories ? (
-          <RepositoryList repositories={repositories} />
+          <RepositoryList
+            repositories={repositories}
+            content={dictionary.projects}
+          />
         ) : (
           <section className="border-border/50 bg-card/30 space-y-4 rounded-3xl border p-8 text-center shadow-lg shadow-black/10">
             <h1 className="text-foreground text-2xl font-semibold sm:text-3xl">
-              Projects are temporarily unavailable
+              {dictionary.projects.emptyTitle}
             </h1>
             <p className="text-muted-foreground text-sm sm:text-base">
-              You can browse all of my work directly on{" "}
+              {dictionary.projects.emptyBodyPrefix}{" "}
               <a
                 href="https://github.com/eynort"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground underline underline-offset-4"
               >
-                GitHub
+                {dictionary.projects.emptyBodyLink}
               </a>
               .
             </p>
