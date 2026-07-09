@@ -43,11 +43,13 @@ export const metadata: Metadata = {
     title: "Bryant Caballero — Full Stack Developer",
     description: siteDescription,
     siteName: "Bryant Caballero",
+    images: [{ url: "/images/profile.jpg", alt: "Bryant Caballero" }],
   },
   twitter: {
     card: "summary",
     title: "Bryant Caballero — Full Stack Developer",
     description: siteDescription,
+    images: ["/images/profile.jpg"],
   },
   icons: {
     icon: [

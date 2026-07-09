@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ISocialLink {
   label: string;
   href: string;
@@ -64,20 +66,30 @@ export function AboutHero() {
 
   return (
     <section className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-4xl flex-col justify-center gap-6 px-4 py-12 sm:px-6 lg:px-8">
-      <div className="space-y-3">
-        <p className="text-primary text-xs font-semibold tracking-[0.35em] uppercase">
-          Full Stack Developer · React · Next.js · Node.js
-        </p>
-        <h1 className="text-foreground text-4xl font-normal sm:text-5xl lg:text-6xl">
-          Bryant Caballero
-        </h1>
-        <p className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-          <span
-            aria-hidden="true"
-            className="inline-block h-2 w-2 rounded-full bg-emerald-500"
-          />
-          Open to remote roles · Venezuela (GMT-4) · English C1
-        </p>
+      <div className="flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="space-y-3">
+          <p className="text-primary text-xs font-semibold tracking-[0.35em] uppercase">
+            Full Stack Developer · React · Next.js · Node.js
+          </p>
+          <h1 className="text-foreground text-4xl font-normal sm:text-5xl lg:text-6xl">
+            Bryant Caballero
+          </h1>
+          <p className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
+            <span
+              aria-hidden="true"
+              className="inline-block h-2 w-2 rounded-full bg-emerald-500"
+            />
+            Open to remote roles · Venezuela (GMT-4) · English C1
+          </p>
+        </div>
+        <Image
+          src="/images/profile.jpg"
+          alt="Bryant Caballero"
+          width={128}
+          height={128}
+          priority
+          className="h-24 w-24 shrink-0 rounded-full sm:h-32 sm:w-32"
+        />
       </div>
       <div className="space-y-4">{paragraphItems}</div>
       <div className="flex flex-wrap gap-2">{skillItems}</div>
