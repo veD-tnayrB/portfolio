@@ -4,14 +4,33 @@ interface IRepositoryCardProps {
   repository: IGitHubRepository;
 }
 
+// Official GitHub linguist colors for the languages featured repos use.
+const languageColors: Record<string, string> = {
+  TypeScript: "#3178c6",
+  JavaScript: "#f1e05a",
+  SCSS: "#c6538c",
+  CSS: "#663399",
+  HTML: "#e34c26",
+  Go: "#00ADD8",
+};
+
 export function RepositoryCard({ repository }: IRepositoryCardProps) {
   const targetLink = repository.homepage || repository.html_url;
 
   const languageBadges = repository.languages.map((language) => (
     <span
       key={language}
-      className="bg-primary/10 text-primary inline-flex h-6 items-center rounded-full px-3 text-xs font-medium"
+      className="bg-primary/10 text-primary inline-flex h-6 items-center gap-1.5 rounded-full px-3 text-xs font-medium"
     >
+      <span
+        aria-hidden="true"
+        className="bg-muted-foreground inline-block h-2 w-2 rounded-full"
+        style={
+          languageColors[language]
+            ? { backgroundColor: languageColors[language] }
+            : undefined
+        }
+      />
       {language}
     </span>
   ));
@@ -33,7 +52,18 @@ export function RepositoryCard({ repository }: IRepositoryCardProps) {
           ) : null}
         </div>
         <div className="text-muted-foreground flex items-center gap-2 text-sm font-medium sm:text-base">
-          <span aria-hidden="true">⭐</span>
+          <svg
+            aria-hidden="true"
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinejoin="round"
+          >
+            <path d="M12 17.75l-6.172 3.245 1.179-6.873-4.993-4.867 6.9-1.002L12 2l3.086 6.253 6.9 1.002-4.993 4.867 1.179 6.873z" />
+          </svg>
           <span>{repository.stargazers_count}</span>
         </div>
       </header>

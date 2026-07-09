@@ -25,7 +25,9 @@ export function ExperienceTimeline({ entries }: IExperienceTimelineProps) {
           leadership.
         </p>
       </header>
-      <div className="grid gap-6">{timelineItems}</div>
+      <div className="border-border/60 ml-1 grid gap-6 border-l pl-6 sm:pl-8">
+        {timelineItems}
+      </div>
     </section>
   );
 }

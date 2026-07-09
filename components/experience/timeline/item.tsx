@@ -17,7 +17,11 @@ export function ExperienceTimelineItem({
   ));
 
   return (
-    <article className="border-border/50 bg-card/40 hover:border-border rounded-3xl border p-6 shadow-lg shadow-black/10 transition-colors duration-200 sm:p-8">
+    <article className="border-border/50 bg-card/40 hover:border-border relative rounded-3xl border p-6 shadow-lg shadow-black/10 transition-colors duration-200 sm:p-8">
+      <span
+        aria-hidden="true"
+        className="bg-primary border-background absolute top-8 -left-[29px] h-[9px] w-[9px] rounded-full border sm:top-10 sm:-left-[37px]"
+      />
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h3 className="text-foreground text-lg font-semibold sm:text-xl">
