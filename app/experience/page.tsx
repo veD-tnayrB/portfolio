@@ -23,10 +23,10 @@ const experienceEntries: IExperienceEntry[] = [
       "Full-stack development and requirements analysis for clients across multiple industries, building scalable web applications with React, Node.js, and TypeScript in close collaboration with product designers.",
     highlights: [
       "Core contributor to JAD, the company's internal platform and framework, taking part in central product and architecture decisions from its foundations — today it powers 6+ client products in production and sets the team's reference architecture.",
-      "Worked hand-in-hand with clients to migrate their legacy systems onto JAD, extending the lifespan of those systems and bringing them back to a maintainable, evolvable state.",
-      "Helped drive AI adoption across the engineering team: defined the rules AI-generated code must follow and designed and documented the quality processes and standards that keep agentic workflows predictable.",
+      "Migrated 100% of client legacy systems onto JAD — 6 clients in under a month — working hand-in-hand with clients and bringing their systems back to a maintainable, evolvable state.",
+      "Helped drive AI adoption across the engineering team: defined the rules AI-generated code must follow, documented the quality processes that keep agentic workflows predictable, and integrated AI-assisted automated testing into the deployment pipeline.",
       "Played a central role in migrating backend services from GCP virtual machines to Cloud Run and Cloud SQL, and every frontend from Apache-based VMs to Firebase Hosting — isolating environments, automating deployments, and reducing operational costs.",
-      "Standardized the team's delivery process, channeling proposals from engineers into a predictable, reliable integration pipeline.",
+      "Standardized the team's delivery process, cutting turnaround for new features and bug fixes from days to hours, and client demo delivery from weeks to days.",
       "Partnered directly with the CEO and CTO to define technical guidelines, architectures, and solutions for client projects.",
     ],
   },
