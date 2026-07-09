@@ -15,6 +15,21 @@ export const metadata: Metadata = {
 const MINIMUM_LANGUAGE_SHARE = 0.05;
 const MAXIMUM_LANGUAGE_BADGES = 4;
 
+// Unauthenticated GitHub API calls are limited to 60/hour per IP, which
+// shared build servers exhaust quickly. Set GITHUB_TOKEN to lift the limit.
+function getGitHubHeaders(): HeadersInit {
+  const headers: Record<string, string> = {
+    Accept: "application/vnd.github.v3+json",
+    "User-Agent": "eynort-portfolio",
+  };
+
+  if (process.env.GITHUB_TOKEN) {
+    headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  }
+
+  return headers;
+}
+
 async function getRepositoryLanguages(
   username: string,
   repositoryName: string,
@@ -23,13 +38,13 @@ async function getRepositoryLanguages(
     const response = await fetch(
       `https://api.github.com/repos/${username}/${repositoryName}/languages`,
       {
-        headers: { Accept: "application/vnd.github.v3+json" },
+        headers: getGitHubHeaders(),
         next: { revalidate: 3600 },
       },
     );
 
     if (!response.ok) {
-      throw new Error("Failed to fetch repository languages");
+      throw new Error(`GitHub responded with ${response.status}`);
     }
 
     const languageBytes: Record<string, number> = await response.json();
@@ -48,9 +63,9 @@ async function getRepositoryLanguages(
       .slice(0, MAXIMUM_LANGUAGE_BADGES)
       .map(([name]) => name);
   } catch (error) {
-    console.error(
-      `Error fetching languages for repository ${repositoryName}`,
-      error,
+    console.warn(
+      `Could not fetch languages for ${repositoryName}, falling back to its primary language:`,
+      error instanceof Error ? error.message : error,
     );
     return [];
   }
@@ -63,7 +78,7 @@ async function getGitHubRepositories(
     const response = await fetch(
       `https://api.github.com/users/${username}/repos?sort=created&direction=desc&per_page=100`,
       {
-        headers: { Accept: "application/vnd.github.v3+json" },
+        headers: getGitHubHeaders(),
         next: { revalidate: 3600 },
       },
     );
