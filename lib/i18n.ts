@@ -9,6 +9,7 @@ export function isLocale(value: string): value is Locale {
 }
 
 interface IHeroDictionary {
+  role: string;
   availability: string;
   paragraphs: string[];
   downloadCv: string;
@@ -65,7 +66,7 @@ export interface IDictionary {
 
 const en: IDictionary = {
   siteDescription:
-    "Bryant Caballero is a Full Stack Developer specialized in React, Next.js, Node.js, and TypeScript — building internal platforms, modernizing legacy systems, leading cloud migrations (Google Cloud, Firebase), and defining the standards that keep AI-assisted engineering predictable.",
+    "Bryant Caballero is a Full Stack Developer specialized in React, Next.js, React Native, Node.js, and TypeScript — AI-driven development with Claude Code, internal platforms, legacy modernization, cloud migrations (Google Cloud, Firebase), and the standards that keep AI-assisted engineering predictable.",
   pageTitles: { projects: "Projects", experience: "Experience" },
   pageDescriptions: {
     projects:
@@ -82,9 +83,10 @@ const en: IDictionary = {
     switchLanguage: "Cambiar idioma a español",
   },
   hero: {
+    role: "Full Stack Developer · AI-Driven · Boringly Reliable",
     availability: "Open to remote roles · Venezuela (GMT-4) · English C1",
     paragraphs: [
-      "I build full stack products with React, Next.js, and Node.js, turning ambiguous problems into predictable, maintainable systems — from internal platforms powering client products in production to legacy systems brought back to an evolvable state.",
+      "I build full stack products — web and mobile — with React, Next.js, React Native, and Node.js, turning ambiguous problems into predictable, maintainable systems: from internal platforms powering client products in production to legacy systems brought back to an evolvable state.",
       'I champion boring processes and "Boring Code": clear, strictly standardized architectures and pipelines that eliminate daily technical friction. My job is to make sure every good idea — whether written by a human or by an agent — gets channeled, standardized, and shipped through an integration chain you can rely on.',
     ],
     downloadCv: "Download CV",
@@ -116,7 +118,7 @@ const en: IDictionary = {
   experienceContent: {
     entryTitle: "Full Stack Developer",
     entryDescription:
-      "Full-stack development and requirements analysis for clients across multiple industries, building scalable web applications with React, Node.js, and TypeScript in close collaboration with product designers.",
+      "Full-stack development and requirements analysis for clients across multiple industries, building scalable web and mobile applications with React, React Native (Expo), Node.js, and TypeScript in close collaboration with product designers.",
     entryHighlights: [
       "Core contributor to JAD, the company's internal platform and framework, taking part in central product and architecture decisions from its foundations — today it powers 6+ client products in production and sets the team's reference architecture.",
       "Migrated 100% of client legacy systems onto JAD — 6 clients in under a month — working hand-in-hand with clients and bringing their systems back to a maintainable, evolvable state.",
@@ -130,7 +132,7 @@ const en: IDictionary = {
 
 const es: IDictionary = {
   siteDescription:
-    "Bryant Caballero es un Desarrollador Full Stack especializado en React, Next.js, Node.js y TypeScript — construye plataformas internas, moderniza sistemas legacy, lidera migraciones cloud (Google Cloud, Firebase) y define los estándares que mantienen predecible la ingeniería asistida por IA.",
+    "Bryant Caballero es un Desarrollador Full Stack especializado en React, Next.js, React Native, Node.js y TypeScript — desarrollo AI-driven con Claude Code, plataformas internas, modernización de sistemas legacy, migraciones cloud (Google Cloud, Firebase) y los estándares que mantienen predecible la ingeniería asistida por IA.",
   pageTitles: { projects: "Proyectos", experience: "Experiencia" },
   pageDescriptions: {
     projects:
@@ -147,9 +149,10 @@ const es: IDictionary = {
     switchLanguage: "Switch language to English",
   },
   hero: {
+    role: "Full Stack Developer · AI-Driven · Aburridamente Confiable",
     availability: "Abierto a roles remotos · Venezuela (GMT-4) · Inglés C1",
     paragraphs: [
-      "Construyo productos full stack con React, Next.js y Node.js, convirtiendo problemas ambiguos en sistemas predecibles y mantenibles — desde plataformas internas que impulsan productos de clientes en producción hasta sistemas legacy devueltos a un estado evolucionable.",
+      "Construyo productos full stack — web y móvil — con React, Next.js, React Native y Node.js, convirtiendo problemas ambiguos en sistemas predecibles y mantenibles: desde plataformas internas que impulsan productos de clientes en producción hasta sistemas legacy devueltos a un estado evolucionable.",
       "Defiendo los procesos aburridos y el «código aburrido»: arquitecturas y pipelines claros y estrictamente estandarizados que eliminan la fricción técnica del día a día. Mi trabajo es que cada buena idea — escrita por un humano o por un agente — sea canalizada, estandarizada y entregada a través de una cadena de integración en la que se puede confiar.",
     ],
     downloadCv: "Descargar CV",
@@ -181,7 +184,7 @@ const es: IDictionary = {
   experienceContent: {
     entryTitle: "Full Stack Developer",
     entryDescription:
-      "Desarrollo full stack y análisis de requerimientos para clientes de múltiples industrias, construyendo aplicaciones web escalables con React, Node.js y TypeScript en estrecha colaboración con diseñadores de producto.",
+      "Desarrollo full stack y análisis de requerimientos para clientes de múltiples industrias, construyendo aplicaciones web y móviles escalables con React, React Native (Expo), Node.js y TypeScript en estrecha colaboración con diseñadores de producto.",
     entryHighlights: [
       "Contribuidor central de JAD, la plataforma y framework interno de la empresa, participando en las decisiones centrales de producto y arquitectura desde sus fundaciones — hoy impulsa 6+ productos de clientes en producción y define la arquitectura de referencia del equipo.",
       "Migré el 100% de los sistemas legacy de los clientes a JAD — 6 clientes en menos de un mes — trabajando mano a mano con los clientes y devolviendo sus sistemas a un estado mantenible y evolucionable.",

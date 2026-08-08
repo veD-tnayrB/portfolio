@@ -21,6 +21,7 @@ const skills: string[] = [
   "React",
   "Next.js",
   "TypeScript",
+  "React Native",
   "Node.js",
   "Express",
   "PostgreSQL",
@@ -28,6 +29,7 @@ const skills: string[] = [
   "Firebase",
   "Docker",
   "CI/CD",
+  "Claude Code",
 ];
 
 interface IAboutHeroProps {
@@ -70,7 +72,7 @@ export function AboutHero({ content }: IAboutHeroProps) {
       <div className="flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-3">
           <p className="text-primary text-xs font-semibold tracking-[0.35em] uppercase">
-            Full Stack Developer · React · Next.js · Node.js
+            {content.role}
           </p>
           <h1 className="text-foreground text-4xl font-normal sm:text-5xl lg:text-6xl">
             Bryant Caballero
