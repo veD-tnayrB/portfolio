@@ -120,7 +120,7 @@ const en: IDictionary = {
       "Full stack development and requirements analysis for clients in several industries. Web and mobile apps with React, React Native (Expo), Node.js, and TypeScript.",
     entryHighlights: [
       "Core contributor to JAD, the company's internal platform, in on its product and architecture decisions since the foundations. Today it powers 6+ client products in production.",
-      "Migrated all 6 client legacy systems onto JAD in under a month, working directly with each client. One was a legacy mobile app I moved to React Native (Expo) on my own in four days.",
+      "Migrated all 6 client legacy systems onto JAD in under a month, working directly with each client. One I ran end to end myself, platform and React Native (Expo) app included, then handed off to the team when I was moved to a larger client.",
       "Drove AI adoption on the engineering team: wrote the rules AI-generated code has to follow and built the automated quality gate that enforces them, 10+ checks wired into our definition of done.",
       "Moved our backend services from GCP virtual machines to Cloud Run and Cloud SQL, and every frontend from Apache VMs to Firebase Hosting. Isolated environments, automated deployments, lower operating costs.",
       "Standardized the delivery process. New features and bug fixes now ship in hours instead of days; client demos in days instead of weeks.",
@@ -185,7 +185,7 @@ const es: IDictionary = {
       "Desarrollo full stack y análisis de requerimientos para clientes de varias industrias. Aplicaciones web y móviles con React, React Native (Expo), Node.js y TypeScript.",
     entryHighlights: [
       "Contribuidor central de JAD, la plataforma interna de la empresa, participando en sus decisiones de producto y arquitectura desde las fundaciones. Hoy impulsa 6+ productos de clientes en producción.",
-      "Migré los 6 sistemas legacy de los clientes a JAD en menos de un mes, trabajando directo con cada cliente. Uno era una app móvil legacy que pasé a React Native (Expo) yo solo en cuatro días.",
+      "Migré los 6 sistemas legacy de los clientes a JAD en menos de un mes, trabajando directo con cada cliente. Uno lo llevé completo yo mismo, plataforma y app en React Native (Expo) incluidas, y luego lo delegué al equipo cuando me pasaron a un cliente más grande.",
       "Impulsé la adopción de IA en el equipo: escribí las reglas que el código generado por IA debe cumplir y construí la puerta de calidad automática que las hace valer, más de 10 verificaciones integradas a nuestro definition of done.",
       "Migré los servicios backend de máquinas virtuales de GCP a Cloud Run y Cloud SQL, y todos los frontends de VMs con Apache a Firebase Hosting. Ambientes aislados, despliegues automatizados, menos costo operativo.",
       "Estandaricé el proceso de entrega. Las funcionalidades y correcciones ahora salen en horas en vez de días; las demos a clientes en días en vez de semanas.",
