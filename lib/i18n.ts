@@ -66,7 +66,7 @@ export interface IDictionary {
 
 const en: IDictionary = {
   siteDescription:
-    "Bryant Caballero is a Full Stack Developer specialized in React, Next.js, React Native, Node.js, and TypeScript — AI-driven development with Claude Code, internal platforms, legacy modernization, cloud migrations (Google Cloud, Firebase), and the standards that keep AI-assisted engineering predictable.",
+    "Bryant Caballero is a Full Stack Developer working with React, Next.js, React Native, Node.js, and TypeScript. AI-driven development with Claude Code, internal platforms, legacy modernization, and cloud migrations on Google Cloud and Firebase.",
   pageTitles: { projects: "Projects", experience: "Experience" },
   pageDescriptions: {
     projects:
@@ -86,8 +86,8 @@ const en: IDictionary = {
     role: "Full Stack Developer · AI-Driven · Boringly Reliable",
     availability: "Open to remote roles · Venezuela (GMT-4) · English C1",
     paragraphs: [
-      "I build full stack products — web and mobile — with React, Next.js, React Native, and Node.js, turning ambiguous problems into predictable, maintainable systems: from internal platforms powering client products in production to legacy systems brought back to an evolvable state.",
-      'I champion boring processes and "Boring Code": clear, strictly standardized architectures and pipelines that eliminate daily technical friction. My job is to make sure every good idea — whether written by a human or by an agent — gets channeled, standardized, and shipped through an integration chain you can rely on.',
+      "I build web and mobile products with React, Next.js, React Native, and Node.js. Most of my work at Baleares Group lives inside JAD, the internal platform behind 6+ client products in production. I have also spent a good part of these years rescuing legacy systems other people had given up on.",
+      "I like boring code. Standards, predictable pipelines, releases nobody fears. That matters more now that so much code is written by AI, so I built the quality gates my team uses to make sure AI output ships at the same bar as everything else.",
     ],
     downloadCv: "Download CV",
     cvHref: "/Bryant_Caballero.pdf",
@@ -96,19 +96,18 @@ const en: IDictionary = {
     label: "Experience",
     title: "Work History",
     subtitle:
-      "Platform engineering, legacy modernization, cloud migrations, and AI-era standards — working directly with technical and business leadership.",
+      "Platform work, legacy rescues, and cloud migrations at Baleares Group.",
   },
   certificates: {
     label: "Certifications",
     title: "Continuous Learning",
-    subtitle:
-      "Structured programs that ground my day-to-day work in computer science fundamentals, algorithms, and web development.",
+    subtitle: "Where I got my computer science fundamentals.",
   },
   projects: {
     label: "Projects",
     title: "Open Source Highlights",
     subtitle:
-      "A hand-picked selection of my open source work — platforms, starters, and product experiments that showcase my approach to developer experience, performance, and maintainability.",
+      "Some of my open source work: platforms, starters, and a few experiments.",
     viewProject: "View project →",
     noDescription: "Project description coming soon.",
     emptyTitle: "Projects are temporarily unavailable",
@@ -118,21 +117,21 @@ const en: IDictionary = {
   experienceContent: {
     entryTitle: "Full Stack Developer",
     entryDescription:
-      "Full-stack development and requirements analysis for clients across multiple industries, building scalable web and mobile applications with React, React Native (Expo), Node.js, and TypeScript in close collaboration with product designers.",
+      "Full stack development and requirements analysis for clients in several industries. Web and mobile apps with React, React Native (Expo), Node.js, and TypeScript.",
     entryHighlights: [
-      "Core contributor to JAD, the company's internal platform and framework, taking part in central product and architecture decisions from its foundations — today it powers 6+ client products in production and sets the team's reference architecture.",
-      "Migrated 100% of client legacy systems onto JAD — 6 clients in under a month, including a legacy mobile app I migrated to React Native (Expo) solo in four days — working hand-in-hand with clients and bringing their systems back to a maintainable, evolvable state.",
-      "Helped drive AI adoption across the engineering team: defined the rules AI-generated code must follow and built the automated quality gate that enforces them — 10+ checks wired into the team's definition of done — keeping agentic workflows and AI-assisted testing predictable.",
-      "Played a central role in migrating backend services from GCP virtual machines to Cloud Run and Cloud SQL, and every frontend from Apache-based VMs to Firebase Hosting — isolating environments, automating deployments, and reducing operational costs.",
-      "Standardized the team's delivery process, cutting turnaround for new features and bug fixes from days to hours, and client demo delivery from weeks to days.",
-      "Partnered directly with the CEO and CTO to define technical guidelines and architectures for client projects.",
+      "Core contributor to JAD, the company's internal platform, in on its product and architecture decisions since the foundations. Today it powers 6+ client products in production.",
+      "Migrated all 6 client legacy systems onto JAD in under a month, working directly with each client. One was a legacy mobile app I moved to React Native (Expo) on my own in four days.",
+      "Drove AI adoption on the engineering team: wrote the rules AI-generated code has to follow and built the automated quality gate that enforces them, 10+ checks wired into our definition of done.",
+      "Moved our backend services from GCP virtual machines to Cloud Run and Cloud SQL, and every frontend from Apache VMs to Firebase Hosting. Isolated environments, automated deployments, lower operating costs.",
+      "Standardized the delivery process. New features and bug fixes now ship in hours instead of days; client demos in days instead of weeks.",
+      "Worked directly with the CEO and CTO on technical guidelines and architectures for client projects.",
     ],
   },
 };
 
 const es: IDictionary = {
   siteDescription:
-    "Bryant Caballero es un Desarrollador Full Stack especializado en React, Next.js, React Native, Node.js y TypeScript — desarrollo AI-driven con Claude Code, plataformas internas, modernización de sistemas legacy, migraciones cloud (Google Cloud, Firebase) y los estándares que mantienen predecible la ingeniería asistida por IA.",
+    "Bryant Caballero es un Desarrollador Full Stack que trabaja con React, Next.js, React Native, Node.js y TypeScript. Desarrollo AI-driven con Claude Code, plataformas internas, modernización de sistemas legacy y migraciones cloud en Google Cloud y Firebase.",
   pageTitles: { projects: "Proyectos", experience: "Experiencia" },
   pageDescriptions: {
     projects:
@@ -152,8 +151,8 @@ const es: IDictionary = {
     role: "Full Stack Developer · AI-Driven · Aburridamente Confiable",
     availability: "Abierto a roles remotos · Venezuela (GMT-4) · Inglés C1",
     paragraphs: [
-      "Construyo productos full stack — web y móvil — con React, Next.js, React Native y Node.js, convirtiendo problemas ambiguos en sistemas predecibles y mantenibles: desde plataformas internas que impulsan productos de clientes en producción hasta sistemas legacy devueltos a un estado evolucionable.",
-      "Defiendo los procesos aburridos y el «código aburrido»: arquitecturas y pipelines claros y estrictamente estandarizados que eliminan la fricción técnica del día a día. Mi trabajo es que cada buena idea — escrita por un humano o por un agente — sea canalizada, estandarizada y entregada a través de una cadena de integración en la que se puede confiar.",
+      "Construyo productos web y móviles con React, Next.js, React Native y Node.js. La mayor parte de mi trabajo en Baleares Group vive dentro de JAD, la plataforma interna detrás de 6+ productos de clientes en producción. También he pasado buena parte de estos años rescatando sistemas legacy que otros daban por perdidos.",
+      "Me gusta el código aburrido. Estándares, pipelines predecibles, releases que nadie teme. Eso importa más ahora que tanto código lo escribe la IA, así que construí las puertas de calidad que usa mi equipo para que lo que genera la IA salga a producción con la misma vara que todo lo demás.",
     ],
     downloadCv: "Descargar CV",
     cvHref: "/Bryant_Caballero_ES.pdf",
@@ -162,19 +161,18 @@ const es: IDictionary = {
     label: "Experiencia",
     title: "Historial profesional",
     subtitle:
-      "Ingeniería de plataformas, modernización de sistemas legacy, migraciones cloud y estándares para la era de la IA — trabajando directamente con el liderazgo técnico y de negocio.",
+      "Plataforma, rescate de sistemas legacy y migraciones cloud en Baleares Group.",
   },
   certificates: {
     label: "Certificaciones",
     title: "Aprendizaje continuo",
-    subtitle:
-      "Programas estructurados que sustentan mi trabajo diario en fundamentos de ciencias de la computación, algoritmos y desarrollo web.",
+    subtitle: "Donde construí mis fundamentos de computación.",
   },
   projects: {
     label: "Proyectos",
     title: "Destacados open source",
     subtitle:
-      "Una selección curada de mi trabajo open source — plataformas, starters y experimentos de producto que muestran mi enfoque en experiencia de desarrollo, rendimiento y mantenibilidad.",
+      "Parte de mi trabajo open source: plataformas, starters y algunos experimentos.",
     viewProject: "Ver proyecto →",
     noDescription: "Descripción del proyecto próximamente.",
     emptyTitle: "Proyectos temporalmente no disponibles",
@@ -184,14 +182,14 @@ const es: IDictionary = {
   experienceContent: {
     entryTitle: "Full Stack Developer",
     entryDescription:
-      "Desarrollo full stack y análisis de requerimientos para clientes de múltiples industrias, construyendo aplicaciones web y móviles escalables con React, React Native (Expo), Node.js y TypeScript en estrecha colaboración con diseñadores de producto.",
+      "Desarrollo full stack y análisis de requerimientos para clientes de varias industrias. Aplicaciones web y móviles con React, React Native (Expo), Node.js y TypeScript.",
     entryHighlights: [
-      "Contribuidor central de JAD, la plataforma y framework interno de la empresa, participando en las decisiones centrales de producto y arquitectura desde sus fundaciones — hoy impulsa 6+ productos de clientes en producción y define la arquitectura de referencia del equipo.",
-      "Migré el 100% de los sistemas legacy de los clientes a JAD — 6 clientes en menos de un mes, incluyendo una aplicación móvil legacy que migré a React Native (Expo) yo solo en cuatro días — trabajando mano a mano con los clientes y devolviendo sus sistemas a un estado mantenible y evolucionable.",
-      "Ayudé a impulsar la adopción de IA en el equipo de ingeniería: definí las reglas que el código generado por IA debe respetar y construí la puerta de calidad automática que las hace cumplir — más de 10 verificaciones integradas al definition of done del equipo — manteniendo predecibles los flujos agénticos y el testing asistido por IA.",
-      "Jugué un rol central en la migración de los servicios backend desde máquinas virtuales de GCP hacia Cloud Run y Cloud SQL, y de todos los frontends desde VMs con Apache hacia Firebase Hosting — aislando ambientes, automatizando despliegues y reduciendo costos operativos.",
-      "Estandaricé el proceso de entrega del equipo, reduciendo el tiempo de nuevas funcionalidades y correcciones de días a horas, y la entrega de demos a clientes de semanas a días.",
-      "Colaboré directamente con el CEO y el CTO definiendo lineamientos técnicos y arquitecturas para proyectos de clientes.",
+      "Contribuidor central de JAD, la plataforma interna de la empresa, participando en sus decisiones de producto y arquitectura desde las fundaciones. Hoy impulsa 6+ productos de clientes en producción.",
+      "Migré los 6 sistemas legacy de los clientes a JAD en menos de un mes, trabajando directo con cada cliente. Uno era una app móvil legacy que pasé a React Native (Expo) yo solo en cuatro días.",
+      "Impulsé la adopción de IA en el equipo: escribí las reglas que el código generado por IA debe cumplir y construí la puerta de calidad automática que las hace valer, más de 10 verificaciones integradas a nuestro definition of done.",
+      "Migré los servicios backend de máquinas virtuales de GCP a Cloud Run y Cloud SQL, y todos los frontends de VMs con Apache a Firebase Hosting. Ambientes aislados, despliegues automatizados, menos costo operativo.",
+      "Estandaricé el proceso de entrega. Las funcionalidades y correcciones ahora salen en horas en vez de días; las demos a clientes en días en vez de semanas.",
+      "Trabajé directo con el CEO y el CTO en lineamientos técnicos y arquitecturas para proyectos de clientes.",
     ],
   },
 };
