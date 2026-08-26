@@ -94,8 +94,12 @@ export function Navigation({ lang, labels }: INavigationProps) {
         return;
       }
 
-      // Handle numeric key navigation
-      const quickAccessIndex = Number.parseInt(event.key, 10);
+      // Handle numeric key navigation (1-based: 1 → about, 2 → projects, 3 → experience)
+      const quickAccessIndex = Number.parseInt(event.key, 10) - 1;
+      if (quickAccessIndex < 0) {
+        return;
+      }
+
       const destination = navigationLinks[quickAccessIndex]?.href;
       if (!destination || destination === pathname) {
         return;
