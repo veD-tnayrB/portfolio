@@ -25,3 +25,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Personal job-search working files — kept out of this public repo
+/docs/
+/.claude/
